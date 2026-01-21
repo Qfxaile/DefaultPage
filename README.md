@@ -8,6 +8,31 @@
 
 **典型场景**：泛域名解析（如 `*.example.com`）的兜底页面，用于提示访问者域名已解析但站点尚未配置。
 
+## 页面展示
+
+PC界面展示
+
+<img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/103dbe73-51ad-4a1e-a9ec-b0dc7ff09adb" />
+
+
+
+移动端界面展示
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/99169fea-5632-4e67-af86-1b9c7280a7df" width="200px" />
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/60148d92-2dce-4e99-8f2d-4495a8c53778" width="200px" />
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/6d13f188-79c7-453f-8e03-dc85bd0e9f87" width="200px" />
+    </td>
+  </tr>
+</table>
+
+
+
 ## 修改配置
 
 所有配置集中在 `js/config.js` 文件中：
