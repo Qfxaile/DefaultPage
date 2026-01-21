@@ -1,0 +1,542 @@
+/**
+ * 组件样式
+ */
+
+/* ===== 左栏组件 ===== */
+
+.kawaii-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    display: block;
+    animation: bounce 2s ease-in-out infinite;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    object-fit: cover;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-15px) scale(1.05);
+    }
+}
+
+h1 {
+    color: #fff;
+    font-size: 36px;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(255, 255, 255, 0.5);
+    letter-spacing: 2px;
+}
+
+.domain {
+    color: #fff;
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    word-break: break-all;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 12px 25px;
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.message {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.info-box {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-left: 4px solid rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    margin: 25px 0;
+    text-align: left;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-box h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.info-box p {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer {
+    margin-top: 35px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+}
+
+.status {
+    display: inline-block;
+    background: rgba(76, 175, 80, 0.3);
+    backdrop-filter: blur(10px);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 14px;
+    margin: 20px 0;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 15px rgba(76, 175, 80, 0.3);
+    font-weight: 600;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== 中栏组件 ===== */
+
+/* 时间显示样式 - 二次元风格 */
+.time-section {
+    margin-bottom: 20px;
+    position: relative;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.15), rgba(135, 206, 250, 0.15));
+    border-radius: 25px;
+    border: 3px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 32px rgba(255, 182, 193, 0.3);
+    overflow: hidden;
+}
+
+/* 时间卡片装饰 - 闪光星星 */
+.time-section::before,
+.time-section::after {
+    content: '✦';
+    position: absolute;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+.time-section::before {
+    top: 8px;
+    left: 12px;
+    animation-delay: 0s;
+}
+
+.time-section::after {
+    top: 8px;
+    right: 12px;
+    animation-delay: 1s;
+}
+
+@keyframes sparkle {
+    0%, 100% { opacity: 0.3; transform: scale(0.8); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.time-date {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    padding: 0 40px;
+}
+
+.time-time {
+    font-size: 64px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: 8px;
+    font-family: 'Arial Black', 'Segoe UI', sans-serif;
+    text-align: center;
+    margin-top: 8px;
+    position: relative;
+    /* 多层发光效果 - 二次元梦幻感 */
+    text-shadow:
+        /* 白色内发光 */
+        0 0 10px rgba(255, 255, 255, 0.9),
+        0 0 20px rgba(255, 255, 255, 0.7),
+        0 0 30px rgba(255, 255, 255, 0.5),
+        /* 粉色外发光 */
+        0 0 40px rgba(255, 182, 193, 0.6),
+        0 0 60px rgba(255, 182, 193, 0.4),
+        /* 蓝色边缘光 */
+        0 0 80px rgba(135, 206, 250, 0.3),
+        /* 阴影 */
+        0 4px 20px rgba(0, 0, 0, 0.3);
+    animation: animeGlow 3s ease-in-out infinite alternate;
+}
+
+/* 动漫风格呼吸光效 */
+@keyframes animeGlow {
+    0% {
+        text-shadow:
+            0 0 10px rgba(255, 255, 255, 0.8),
+            0 0 20px rgba(255, 255, 255, 0.6),
+            0 0 30px rgba(255, 182, 193, 0.5),
+            0 0 50px rgba(255, 182, 193, 0.3),
+            0 0 70px rgba(135, 206, 250, 0.2),
+            0 4px 15px rgba(0, 0, 0, 0.3);
+        transform: scale(1);
+    }
+    50% {
+        text-shadow:
+            0 0 15px rgba(255, 255, 255, 1),
+            0 0 30px rgba(255, 255, 255, 0.8),
+            0 0 45px rgba(255, 182, 193, 0.7),
+            0 0 65px rgba(255, 182, 193, 0.5),
+            0 0 85px rgba(135, 206, 250, 0.4),
+            0 4px 20px rgba(0, 0, 0, 0.4);
+        transform: scale(1.02);
+    }
+    100% {
+        text-shadow:
+            0 0 20px rgba(255, 255, 255, 0.9),
+            0 0 35px rgba(255, 255, 255, 0.7),
+            0 0 50px rgba(255, 182, 193, 0.6),
+            0 0 70px rgba(255, 182, 193, 0.4),
+            0 0 90px rgba(135, 206, 250, 0.3),
+            0 4px 18px rgba(0, 0, 0, 0.35);
+        transform: scale(1.01);
+    }
+}
+
+/* 信息卡片通用样式 */
+.info-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin: 25px 0;
+}
+
+.info-card {
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(173, 216, 230, 0.3));
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 14px 16px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 20px rgba(255, 182, 193, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 标签前缀图标 */
+.label-icon {
+    font-size: 14px;
+    margin-right: 4px;
+}
+
+.info-card-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.info-card-label {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 12px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.info-card-value {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    word-break: break-word;
+}
+
+.info-card-value.loading {
+    display: inline-block;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* 天气两列布局 */
+.weather-split {
+    margin-bottom: 15px;
+}
+
+.weather-split-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.weather-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* 天气卡片标签对齐 */
+.weather-column .info-card-label {
+    min-height: 20px;
+    margin-bottom: 10px;
+}
+
+.weather-location {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    min-height: 24px;
+    display: flex;
+    align-items: center;
+}
+
+.weather-detail {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+    min-height: 36px;
+}
+
+.weather-icon-large {
+    font-size: 32px;
+    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.3));
+}
+
+.weather-temp-large {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.weather-desc-inline {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 13px;
+}
+
+/* IP多列布局 */
+.ip-split {
+    margin-bottom: 15px;
+}
+
+.ip-split-content {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.ip-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.ip-label {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 11px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.ip-value {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 600;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    word-break: break-all;
+}
+
+.ip-value.loading {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* 一言样式 */
+.hitokoto-container {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.2), rgba(147, 112, 219, 0.2));
+    backdrop-filter: blur(15px);
+    border-radius: 25px;
+    padding: 25px;
+    margin: 25px 0;
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.3);
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.hitokoto-container::before {
+    content: '❝';
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    font-size: 40px;
+    color: rgba(255, 255, 255, 0.3);
+    font-family: Georgia, serif;
+}
+
+.hitokoto-text {
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.8;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    font-style: italic;
+    margin-bottom: 15px;
+    padding: 0 20px;
+}
+
+.hitokoto-from {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.hitokoto-from::before {
+    content: '—— ';
+}
+
+.hitokoto-loading {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    padding: 20px;
+}
+
+/* ===== 右栏组件 - 新闻 ===== */
+
+.news-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    flex-shrink: 0;
+}
+
+.news-title {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.news-refresh {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    border-radius: 12px;
+    padding: 4px 10px;
+    color: #fff;
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.news-list {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding-right: 8px;
+    min-height: 0;
+}
+
+/* 滚动条样式 */
+.news-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.news-list::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+}
+
+.news-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 2px;
+}
+
+.news-list::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.6);
+}
+
+.news-item {
+    display: flex;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 13px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    line-height: 1.6;
+}
+
+.news-index {
+    flex-shrink: 0;
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    font-size: 11px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.news-item.hot .news-index {
+    background: linear-gradient(135deg, #ffeb3b, #ffc107);
+    color: #333;
+}
+
+.news-content {
+    flex: 1;
+}
+
+.news-item:last-child {
+    border-bottom: none;
+}
+
+.news-item.hot .news-content {
+    color: #ffeb3b;
+}
+
+.news-loading {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 13px;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.news-date {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 12px;
+    margin-top: 15px;
+    padding-top: 12px;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}

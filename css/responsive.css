@@ -1,0 +1,148 @@
+/**
+ * 响应式媒体查询
+ */
+
+/* 小屏幕移动端 (≤480px) */
+@media (max-width: 480px) {
+    .bg-animation {
+        background-image: var(--bg-android);
+    }
+
+    body {
+        height: auto;
+        min-height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        padding: 15px;
+        padding-bottom: 40px;
+        overflow-y: visible;
+        align-items: start;
+    }
+
+    .container-left,
+    .container-center,
+    .container-right {
+        padding: 30px 20px;
+        border-radius: 20px;
+        min-height: fit-content;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .domain {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
+    .kawaii-icon {
+        font-size: 70px;
+    }
+
+    .info-panel {
+        gap: 12px;
+    }
+
+    .info-card {
+        padding: 15px;
+    }
+
+    .hitokoto-container {
+        padding: 20px 15px;
+    }
+
+    .hitokoto-text {
+        font-size: 14px;
+    }
+
+    /* 移动端新闻列表完整显示，无滚动 */
+    .news-list {
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .container-right {
+        height: auto;
+        min-height: fit-content;
+    }
+
+    /* 移动端时间显示调整 */
+    .time-section {
+        padding: 12px 15px;
+        margin-bottom: 15px;
+    }
+
+    .time-date {
+        font-size: 13px;
+        padding: 0 15px;
+        letter-spacing: 1px;
+    }
+
+    .time-time {
+        font-size: 36px;
+        letter-spacing: 4px;
+        margin-top: 5px;
+    }
+}
+
+/* 中等屏幕移动端 (481px - 900px) */
+@media (min-width: 481px) and (max-width: 900px) {
+    .bg-animation {
+        background-image: var(--bg-android);
+    }
+
+    body {
+        height: auto;
+        min-height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        padding: 15px;
+        padding-bottom: 40px;
+        overflow-y: visible;
+        align-items: start;
+    }
+
+    .container-left,
+    .container-center,
+    .container-right {
+        min-height: fit-content;
+    }
+
+    /* 移动端新闻列表完整显示，无滚动 */
+    .news-list {
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .container-right {
+        height: auto;
+        min-height: fit-content;
+    }
+
+    /* 中等屏幕移动端时间显示调整 */
+    .time-section {
+        padding: 15px 20px;
+        margin-bottom: 15px;
+    }
+
+    .time-date {
+        font-size: 14px;
+        padding: 0 25px;
+        letter-spacing: 1.5px;
+    }
+
+    .time-time {
+        font-size: 44px;
+        letter-spacing: 5px;
+        margin-top: 6px;
+    }
+}
+
+/* 平板/小屏幕桌面 (901px - 1200px) */
+@media (min-width: 901px) and (max-width: 1200px) {
+    body {
+        gap: 15px;
+        padding: 15px;
+    }
+}
