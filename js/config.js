@@ -4,17 +4,32 @@
 
 // ===== API 配置 =====
 const API = {
-    // IP地址和运营商信息
-    ipInfo: 'https://ipapi.co/json/',
+    // IP地址和运营商信息（多个备用，按优先级排序）
+    ipInfo: [
+        'https://ipapi.co/json/',           // 主 API
+        'https://ipwhois.app/json/',        // 备用 1
+        'http://ip-api.com/json/',          // 备用 2
+    ],
+
+    // 天气信息（多个备用，按优先级排序）
+    weather: [
+        {
+            name: 'openmeteo',
+            url: 'https://api.open-meteo.com/v1/forecast',
+            type: 'openmeteo'
+        },
+        {
+            name: 'wttr',
+            url: 'https://wttr.in/',
+            type: 'wttr'
+        }
+    ],
 
     // 一言（Hitokoto）
     hitokoto: 'https://v1.hitokoto.cn/?c=i&c=d&c=k',
 
     // 每日60s新闻
     news: 'https://60s.viki.moe/v2/60s',
-
-    // 天气信息（wttr.in，使用时需拼接参数）
-    weather: 'https://wttr.in/',
 };
 
 // ===== 资源 URL 配置 =====
