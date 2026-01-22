@@ -34,9 +34,6 @@ const API = {
 
 // ===== 资源 URL 配置 =====
 const RESOURCES = {
-    // QQ头像（dst_uin=QQ号，spec=尺寸）
-    qqAvatar: 'https://q.qlogo.cn/headimg_dl?dst_uin=21518887&spec=140',
-
     // 可改成远程链接
     // PC端背景图
     bgPC: '/img/bg-pc.png',

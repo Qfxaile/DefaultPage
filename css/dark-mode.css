@@ -16,6 +16,89 @@ body.dark-mode .bg-animation {
     }
 }
 
+/* ===== 深色模式主页样式 ===== */
+body.dark-mode .home-avatar {
+    box-shadow:
+        0 5px 20px rgba(139, 92, 246, 0.4),
+        0 0 30px rgba(139, 92, 246, 0.2);
+}
+
+body.dark-mode .home-name {
+    color: #e2e8f0;
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.5),
+        0 0 20px rgba(139, 92, 246, 0.4);
+}
+
+body.dark-mode .home-tagline {
+    color: #cbd5e1;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .home-bio {
+    color: #94a3b8;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-mode .home-section-title {
+    color: #e2e8f0;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* 深色模式联系方式图标 */
+body.dark-mode .home-contact-item {
+    background: rgba(139, 92, 246, 0.2);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+body.dark-mode .home-contact-item:hover {
+    background: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+}
+
+body.dark-mode .home-contact-icon {
+    color: #cbd5e1;
+}
+
+/* 深色模式网站导航 */
+body.dark-mode .home-website-card {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+}
+
+body.dark-mode .home-website-card:hover {
+    background: rgba(139, 92, 246, 0.2);
+    border-color: rgba(139, 92, 246, 0.3);
+    box-shadow: 0 5px 15px rgba(139, 92, 246, 0.25);
+}
+
+body.dark-mode .website-card-icon {
+    color: #e2e8f0;
+}
+
+body.dark-mode .website-card-title {
+    color: #cbd5e1;
+}
+
+/* 深色模式网站卡片滚动条 */
+body.dark-mode .home-websites::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .home-websites::-webkit-scrollbar-thumb {
+    background: rgba(139, 92, 246, 0.4);
+}
+
+body.dark-mode .home-websites::-webkit-scrollbar-thumb:hover {
+    background: rgba(139, 92, 246, 0.6);
+}
+
+/* 深色模式页脚 */
+body.dark-mode .home-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: #64748b;
+}
+
 /* ===== 深色模式背景叠加层 ===== */
 body.dark-mode .bg-animation::after {
     background: rgba(0, 0, 0, 0.5);
@@ -365,6 +448,8 @@ body.dark-mode .hitokoto-container,
 body.dark-mode .domain,
 body.dark-mode .status,
 body.dark-mode .news-refresh,
+body.dark-mode .home-contact-item,
+body.dark-mode .home-website-item,
 .dark-mode-toggle {
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -389,7 +474,13 @@ body.dark-mode .hitokoto-text,
 body.dark-mode .hitokoto-from,
 body.dark-mode .news-title,
 body.dark-mode .news-item,
-body.dark-mode .news-date {
+body.dark-mode .news-date,
+body.dark-mode .home-name,
+body.dark-mode .home-tagline,
+body.dark-mode .home-bio,
+body.dark-mode .home-section-title,
+body.dark-mode .website-title,
+body.dark-mode .website-url {
     transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 

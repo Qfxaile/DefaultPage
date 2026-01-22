@@ -129,11 +129,10 @@
 
     <!-- 脚本 -->
     <script src="js/config.js"></script>
+    <script src="js/profile.js"></script>
     <script>
-        // 显示当前访问的域名
-        document.getElementById('currentDomain').textContent = window.location.hostname;
-        // 设置QQ头像
-        document.getElementById('qqAvatar').src = RESOURCES.qqAvatar;
+        // 初始化主页
+        initHomePage();
     </script>
     <script src="js/time.js"></script>
     <script src="js/particles.js"></script>
