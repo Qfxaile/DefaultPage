@@ -122,8 +122,7 @@
             applyDarkMode(systemPrefersDark);
         }
 
-        // 3. 创建并添加切换按钮
-        createToggleButton();
+        // 3. 无手动切换界面，仅自动检测
 
         // 4. 监听系统偏好变化（如果没有手动设置）
         if (window.matchMedia && stored === null) {
@@ -135,23 +134,10 @@
     }
 
     /**
-     * 创建深色模式切换按钮
+     * 更新切换按钮的状态（空函数，无手动切换）
      */
-    function createToggleButton() {
-        // 检查是否已存在按钮
-        if (document.getElementById('darkModeToggle')) {
-            return;
-        }
-
-        const button = document.createElement('button');
-        button.id = 'darkModeToggle';
-        button.className = 'dark-mode-toggle';
-        button.setAttribute('aria-label', '切换深色/浅色模式');
-        button.setAttribute('title', '切换深色/浅色模式');
-        button.textContent = ICONS.light;
-        button.addEventListener('click', toggleDarkMode);
-
-        document.body.appendChild(button);
+    function updateToggleButton() {
+        // 无手动切换按钮
     }
 
     // 页面加载完成后初始化

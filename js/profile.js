@@ -103,17 +103,18 @@ const HOME_CONFIG = {
 
 /**
  * 初始化主页内容
- * 根据配置动态生成左栏内容
+ * 根据配置动态生成左栏内容和页脚
  */
 function initHomePage() {
     // 获取容器
     const leftContainer = document.querySelector('.container-left');
+    const pageFooter = document.getElementById('pageFooter');
 
     // 获取头像URL（优先使用自定义头像，否则使用QQ头像）
     const avatarUrl = HOME_CONFIG.profile.avatar ||
         `https://q.qlogo.cn/headimg_dl?dst_uin=${HOME_CONFIG.profile.qqNumber}&spec=140`;
 
-    // 生成HTML内容
+    // 生成左栏HTML内容
     leftContainer.innerHTML = `
         <div class="stars">
             <span class="star" style="top: 10%; left: 15%; animation-delay: 0s;">✨</span>
@@ -161,10 +162,10 @@ function initHomePage() {
                 </div>
             </div>
         </div>
-
-        <!-- 页脚 -->
-        <div class="home-footer">
-            ${HOME_CONFIG.footer.content}
-        </div>
     `;
+
+    // 生成页面级页脚
+    if (pageFooter) {
+        pageFooter.innerHTML = HOME_CONFIG.footer.content;
+    }
 }

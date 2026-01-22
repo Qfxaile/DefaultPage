@@ -37,14 +37,14 @@
 /* 引用卡片式自我介绍 */
 .home-bio {
     position: relative;
-    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.25), rgba(173, 216, 230, 0.25));
     backdrop-filter: blur(15px);
     border-radius: 15px;
     padding: 25px 35px;
     margin-bottom: 30px;
     text-align: center;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 15px rgba(255, 182, 193, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.3);
 }
 
 /* 左侧引号 */
@@ -148,17 +148,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(173, 216, 230, 0.3));
     backdrop-filter: blur(10px);
     border-radius: 50%;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
 .home-contact-item:hover {
-    background: rgba(255, 255, 255, 0.25);
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.4), rgba(173, 216, 230, 0.4));
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
 }
 
 .home-contact-icon {
@@ -194,21 +194,21 @@
     justify-content: center;
     gap: 8px;
     min-width: 0;
-    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.25), rgba(173, 216, 230, 0.25));
     backdrop-filter: blur(15px);
     border-radius: 12px;
     padding: 16px 12px;
     text-decoration: none;
     transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 8px rgba(255, 182, 193, 0.2);
 }
 
 .home-website-card:hover {
-    background: rgba(255, 255, 255, 0.15);
+    background: linear-gradient(135deg, rgba(255, 182, 193, 0.35), rgba(173, 216, 230, 0.35));
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
-    border-color: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
+    border-color: rgba(255, 255, 255, 0.4);
 }
 
 .website-card-icon {
@@ -240,30 +240,34 @@
 }
 
 .home-websites::-webkit-scrollbar-track {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 182, 193, 0.15);
     border-radius: 2px;
 }
 
 .home-websites::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 182, 193, 0.4);
     border-radius: 2px;
 }
 
 .home-websites::-webkit-scrollbar-thumb:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 182, 193, 0.6);
 }
 
-/* 页脚 */
-.home-footer {
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 12px;
+/* 页脚 - 页面级别 */
+.page-footer {
+    grid-column: 1 / -1;
+    grid-row: auto;
     text-align: center;
+    padding: 5px 0;
+    margin: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 11px;
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.3);
+    line-height: 1.6;
 }
 
-.home-footer p {
+.page-footer p {
     margin: 0;
 }
 

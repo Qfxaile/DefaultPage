@@ -118,7 +118,6 @@
         <div class="info-card full-width" style="flex: 1; display: flex; flex-direction: column;">
             <div class="news-header">
                 <span class="news-title"><span class="label-icon">📰</span>每日60s</span>
-                <button class="news-refresh" onclick="fetchNews()" title="刷新">🔄</button>
             </div>
             <div class="news-list" id="newsList">
                 <div class="news-loading">加载中...</div>
@@ -126,6 +125,11 @@
             <div class="news-date" id="newsDate"></div>
         </div>
     </div>
+
+    <!-- 页脚 -->
+    <footer class="page-footer" id="pageFooter">
+        <!-- 由 profile.js 动态填充 -->
+    </footer>
 
     <!-- 脚本 -->
     <script src="js/config.js"></script>

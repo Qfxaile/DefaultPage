@@ -15,7 +15,7 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
     padding: 20px;
-    padding-bottom: 40px;
+    padding-bottom: 10px;
     overflow: hidden;
     position: relative;
     align-items: stretch;
