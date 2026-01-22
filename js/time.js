@@ -5,12 +5,15 @@
 function updateTime() {
     const now = new Date();
 
-    // 年月日
-    const dateStr = now.toLocaleDateString('zh-CN', {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit'
-    }).replace(/\//g, '.');
+    // 星期几
+    const weekdays = ['日', '一', '二', '三', '四', '五', '六'];
+    const weekdayStr = '星期' + weekdays[now.getDay()];
+
+    // 年月日（中文格式：2026年01月22日 星期四）
+    const year = now.getFullYear();
+    const month = String(now.getMonth() + 1).padStart(2, '0');
+    const day = String(now.getDate()).padStart(2, '0');
+    const dateStr = `${year}年${month}月${day}日 ${weekdayStr}`;
 
     // 时分秒
     const timeStr = now.toLocaleTimeString('zh-CN', {

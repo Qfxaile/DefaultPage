@@ -131,7 +131,9 @@ function initHomePage() {
         <div class="home-tagline">${HOME_CONFIG.profile.tagline}</div>
 
         <!-- 个人简介 -->
-        <div class="home-bio">${HOME_CONFIG.profile.bio}</div>
+        <div class="home-bio">
+            <div class="bio-content">${HOME_CONFIG.profile.bio}</div>
+        </div>
 
         <!-- 联系方式 -->
         <div class="home-section">
