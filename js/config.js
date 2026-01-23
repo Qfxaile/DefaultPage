@@ -30,12 +30,20 @@ const RESOURCES = {
     bgAndroid: '/img/bg-android.jpg', // 移动端背景图
 };
 
-// ===== 初始化 CSS 变量 =====
-function initCSSVariables() {
-    const root = document.documentElement;
-    root.style.setProperty('--bg-pc', `url('${RESOURCES.bgPC}')`);
-    root.style.setProperty('--bg-android', `url('${RESOURCES.bgAndroid}')`);
+// ===== 初始化背景图 =====
+function initBackground() {
+    const bgElement = document.querySelector('.bg-animation');
+    if (!bgElement) return;
+
+    // 根据屏幕宽度选择背景图
+    const bgUrl = window.innerWidth <= 900 ? RESOURCES.bgAndroid : RESOURCES.bgPC;
+    bgElement.style.backgroundImage = `url('${bgUrl}')`;
 }
 
-// 页面加载时立即初始化CSS变量
-initCSSVariables();
+// 确保在 DOM 完全就绪后执行（使用 requestAnimationFrame 避免 CSP 问题）
+requestAnimationFrame(function() {
+    initBackground();
+});
+
+// 窗口大小变化时更新背景图
+window.addEventListener('resize', initBackground);

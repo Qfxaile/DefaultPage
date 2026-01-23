@@ -4,9 +4,6 @@
 
 /* 小屏幕移动端 (≤480px) */
 @media (max-width: 480px) {
-    .bg-animation {
-        background-image: var(--bg-android);
-    }
 
     body {
         height: auto;
@@ -131,9 +128,6 @@
 
 /* 中等屏幕移动端 (481px - 900px) */
 @media (min-width: 481px) and (max-width: 900px) {
-    .bg-animation {
-        background-image: var(--bg-android);
-    }
 
     body {
         height: auto;

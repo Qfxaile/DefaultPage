@@ -8,15 +8,8 @@ html {
     color-scheme: light !important;
 }
 
-/* ===== 确保 CSS 变量生效（插件可能覆盖）===== */
-:root {
-    --bg-pc: url('/img/bg-pc.png') !important;
-    --bg-android: url('/img/bg-android.jpg') !important;
-}
-
-/* ===== 强制保持背景图片，防止插件禁用或反转 ===== */
+/* ===== 背景图由 config.js 动态设置，防止插件禁用或反转 ===== */
 .bg-animation {
-    background-image: var(--bg-pc) !important;
     filter: none !important;
     -webkit-filter: none !important;
 }
@@ -25,13 +18,6 @@ html {
     background: rgba(0, 0, 0, 0.35) !important;
     filter: none !important;
     -webkit-filter: none !important;
-}
-
-/* 移动端背景 */
-@media (max-width: 900px) {
-    .bg-animation {
-        background-image: var(--bg-android) !important;
-    }
 }
 
 /* ===== 防止插件使用滤镜反转颜色 ===== */
