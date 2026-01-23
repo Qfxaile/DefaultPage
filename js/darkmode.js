@@ -108,28 +108,17 @@
 
     /**
      * 初始化深色模式
+     * 已固定为浅色模式，禁用自动检测
      */
     function initDarkMode() {
-        // 1. 首先检查用户是否有手动保存的偏好
-        const stored = getStoredPreference();
+        // 固定为浅色模式，不检测系统偏好
+        applyDarkMode(false);
 
-        if (stored !== null) {
-            // 使用用户保存的偏好
-            applyDarkMode(stored);
-        } else {
-            // 2. 没有保存的偏好，检测系统偏好
-            const systemPrefersDark = getSystemPreference();
-            applyDarkMode(systemPrefersDark);
-        }
-
-        // 3. 无手动切换界面，仅自动检测
-
-        // 4. 监听系统偏好变化（如果没有手动设置）
-        if (window.matchMedia && stored === null) {
-            const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-            mediaQuery.addEventListener('change', (e) => {
-                applyDarkMode(e.matches);
-            });
+        // 清除可能存在的旧偏好设置
+        try {
+            localStorage.removeItem(STORAGE_KEY);
+        } catch (e) {
+            // 忽略清除失败
         }
     }
 

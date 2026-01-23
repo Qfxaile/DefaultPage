@@ -1,0 +1,59 @@
+/**
+ * 防止浏览器深色模式插件（Darkling等）强制修改样式
+ * 必须在其他CSS之后加载
+ */
+
+/* ===== 强制浅色模式方案 ===== */
+html {
+    color-scheme: light !important;
+}
+
+/* ===== 确保 CSS 变量生效（插件可能覆盖）===== */
+:root {
+    --bg-pc: url('/img/bg-pc.png') !important;
+    --bg-android: url('/img/bg-android.jpg') !important;
+}
+
+/* ===== 强制保持背景图片，防止插件禁用或反转 ===== */
+.bg-animation {
+    background-image: var(--bg-pc) !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+.bg-animation::after {
+    background: rgba(0, 0, 0, 0.2) !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+/* 移动端背景 */
+@media (max-width: 900px) {
+    .bg-animation {
+        background-image: var(--bg-android) !important;
+    }
+}
+
+/* ===== 防止插件使用滤镜反转颜色 ===== */
+html body,
+html .bg-animation,
+html .container-left,
+html .container-center,
+html .container-right,
+html .info-card,
+html .time-section,
+html .hitokoto-container,
+html .domain,
+html .status,
+html .home-contact-item,
+html .home-website-card,
+html .home-bio {
+    filter: none !important;
+    -webkit-filter: none !important;
+}
+
+/* ===== 防止插件给 ::before/::after 添加覆盖层 ===== */
+body::before,
+.bg-animation::before {
+    display: none !important;
+}

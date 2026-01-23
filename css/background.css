@@ -14,6 +14,8 @@
     background-position: center;
     background-repeat: no-repeat;
     z-index: -2;
+    /* 强制覆盖浏览器插件的背景修改 */
+    background-color: transparent !important;
 }
 
 /* 背景叠加层，增加对比度 */
@@ -25,6 +27,8 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.2);
+    /* 强制覆盖浏览器插件的背景修改 */
+    background-image: none !important;
 }
 
 /* 粒子效果 */
