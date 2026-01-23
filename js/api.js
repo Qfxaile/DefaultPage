@@ -125,8 +125,8 @@ async function fetchHitokoto() {
         const response = await fetch(API.hitokoto);
         const data = await response.json();
 
-        document.getElementById('hitokotoLoading').style.display = 'none';
-        document.getElementById('hitokotoContent').style.display = 'block';
+        document.getElementById('hitokotoLoading').classList.add('hidden');
+        document.getElementById('hitokotoContent').classList.remove('hidden');
         document.getElementById('hitokotoText').textContent = data.hitokoto;
         document.getElementById('hitokotoFrom').textContent =
             `${data.from} ${data.from_who ? '(' + data.from_who + ')' : ''}`;

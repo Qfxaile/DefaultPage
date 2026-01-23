@@ -27,21 +27,22 @@ const HOME_CONFIG = {
     },
 
     // ========== 联系方式（圆形SVG图标） ==========
+    // 注意：请替换以下 URL 中的占位符为实际链接
     contacts: [
         {
             name: 'Email',
-            url: 'mailto:your-email@example.com',
+            url: 'mailto:admin@qfxaile.top',
             // SVG图标内容（内联SVG）
             icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>`
         },
         {
             name: 'GitHub',
-            url: 'https://github.com/your-username',
+            url: 'https://github.com/',
             icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>`
         },
         {
             name: 'QQ',
-            url: 'tencent://message/?uin=your-qq-number',
+            url: 'tencent://message/?uin=21518887',
             icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95 0-5.52-4.48-10-10-10z"/></svg>`
         },
         {
@@ -51,12 +52,12 @@ const HOME_CONFIG = {
         },
         {
             name: 'Bilibili',
-            url: 'https://space.bilibili.com/your-bilibili-id',
+            url: 'https://space.bilibili.com/',
             icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.813 4.653h.854c1.51.054 2.769.578 3.773 1.574 1.004.995 1.524 2.249 1.56 3.76v7.36c-.036 1.51-.556 2.769-1.56 3.773s-2.262 1.524-3.773 1.56H5.333c-1.51-.036-2.769-.556-3.773-1.56S.036 18.858 0 17.347v-7.36c.036-1.511.556-2.765 1.56-3.76 1.004-.996 2.262-1.52 3.773-1.574h.774l-1.174-1.12a1.234 1.234 0 01-.373-.906c0-.356.124-.658.373-.907l.027-.027c.267-.249.573-.373.92-.373.347 0 .653.124.92.373L9.653 4.44c.071.071.134.142.187.213h4.267a.836.836 0 01.16-.213l2.853-2.747c.267-.249.573-.373.92-.373.347 0 .662.151.929.4.267.249.391.551.391.907 0 .355-.124.657-.373.906zM5.333 7.24c-.746.018-1.373.276-1.88.773-.506.498-.769 1.13-.786 1.894v7.52c.017.764.28 1.395.786 1.893.507.498 1.134.756 1.88.773h13.334c.746-.017 1.373-.275 1.88-.773.506-.498.769-1.129.786-1.893v-7.52c-.017-.765-.28-1.396-.786-1.894-.507-.497-1.134-.755-1.88-.773zM8 11.107c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c0-.373.129-.689.386-.947.258-.257.574-.386.947-.386zm8 0c.373 0 .684.124.933.373.25.249.383.569.4.96v1.173c-.017.391-.15.711-.4.96-.249.25-.56.374-.933.374s-.684-.125-.933-.374c-.25-.249-.383-.569-.4-.96V12.44c.017-.391.15-.711.4-.96.249-.249.56-.373.933-.373Z"/></svg>`
         },
         {
             name: 'Twitter',
-            url: 'https://twitter.com/your-username',
+            url: 'https://twitter.com/',
             icon: `<svg viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>`
         }
     ],
@@ -92,26 +93,6 @@ const HOME_CONFIG = {
             title: '音乐',
             url: 'https://music.qfxaile.top',
             icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>`
-        },
-        {
-            title: '图床',
-            url: 'https://img.qfxaile.top',
-            icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>`
-        },
-        {
-            title: '备忘录',
-            url: 'https://notes.qfxaile.top',
-            icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>`
-        },
-        {
-            title: 'API文档',
-            url: 'https://api.qfxaile.top',
-            icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`
-        },
-        {
-            title: '网盘',
-            url: 'https://pan.qfxaile.top',
-            icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19c0-3.037-2.463-5.5-5.5-5.5S6.5 15.963 6.5 19"></path><path d="M19 11c0-3.866-3.134-7-7-7s-7 3.134-7 7"></path><path d="M21 6c0-2.761-2.239-5-5-5s-5 2.239-5 5"></path></svg>`
         }
     ],
 
@@ -238,8 +219,22 @@ function initLeftContentScale() {
 }
 
 /**
+ * 生成单个网站卡片的 HTML
+ * @param {Object} website - 网站对象 {url, title, icon}
+ * @returns {string} HTML 字符串
+ */
+function generateWebsiteCardHTML(website) {
+    return `
+        <a href="${website.url}" class="home-website-card" target="_blank">
+            <div class="website-card-icon">${website.icon}</div>
+            <span class="website-card-title">${website.title}</span>
+        </a>
+    `;
+}
+
+/**
  * 初始化网站导航分页功能
- * PC端：分页显示，每页6个（3列2行），支持定时切换和鼠标滚轮翻页
+ * PC端：分页显示，每页6个（3列2行），支持鼠标滚轮翻页
  * 移动端：保持原样，所有网站都显示
  */
 function initWebsitesPagination() {
@@ -253,12 +248,7 @@ function initWebsitesPagination() {
     if (isMobile) {
         scrollContainer.innerHTML = `
             <div class="home-websites" id="homeWebsites">
-                ${websites.map(website => `
-                    <a href="${website.url}" class="home-website-card" target="_blank">
-                        <div class="website-card-icon">${website.icon}</div>
-                        <span class="website-card-title">${website.title}</span>
-                    </a>
-                `).join('')}
+                ${websites.map(generateWebsiteCardHTML).join('')}
             </div>
         `;
         return;
@@ -272,12 +262,7 @@ function initWebsitesPagination() {
     if (websites.length <= itemsPerPage) {
         scrollContainer.innerHTML = `
             <div class="home-websites">
-                ${websites.map(website => `
-                    <a href="${website.url}" class="home-website-card" target="_blank">
-                        <div class="website-card-icon">${website.icon}</div>
-                        <span class="website-card-title">${website.title}</span>
-                    </a>
-                `).join('')}
+                ${websites.map(generateWebsiteCardHTML).join('')}
             </div>
         `;
         return;
@@ -290,28 +275,11 @@ function initWebsitesPagination() {
         const isLastInPage = index % itemsPerPage === itemsPerPage - 1 || index === websites.length - 1;
 
         if (isFirstInPage) {
-            return `
-                <div class="home-websites-page ${pageIndex === 0 ? 'active' : ''}" data-page="${pageIndex}">
-                    <a href="${website.url}" class="home-website-card" target="_blank">
-                        <div class="website-card-icon">${website.icon}</div>
-                        <span class="website-card-title">${website.title}</span>
-                    </a>
-            `;
+            return `<div class="home-websites-page ${pageIndex === 0 ? 'active' : ''}" data-page="${pageIndex}">${generateWebsiteCardHTML(website)}`;
         } else if (isLastInPage) {
-            return `
-                    <a href="${website.url}" class="home-website-card" target="_blank">
-                        <div class="website-card-icon">${website.icon}</div>
-                        <span class="website-card-title">${website.title}</span>
-                    </a>
-                </div>
-            `;
+            return `${generateWebsiteCardHTML(website)}</div>`;
         } else {
-            return `
-                    <a href="${website.url}" class="home-website-card" target="_blank">
-                        <div class="website-card-icon">${website.icon}</div>
-                        <span class="website-card-title">${website.title}</span>
-                    </a>
-            `;
+            return generateWebsiteCardHTML(website);
         }
     }).join('');
 
@@ -340,12 +308,10 @@ function initWebsitesPagination() {
         if (pageIndex < 0) pageIndex = totalPages - 1;
         if (pageIndex >= totalPages) pageIndex = 0;
 
-        // 移除当前活动页面的active类，添加prev类（用于过渡动画）
         pages[currentPage].classList.remove('active');
         pages[currentPage].classList.add('prev');
         dots[currentPage].classList.remove('active');
 
-        // 激活新页面
         pages[pageIndex].classList.remove('prev');
         pages[pageIndex].classList.add('active');
         dots[pageIndex].classList.add('active');
@@ -367,8 +333,6 @@ function initWebsitesPagination() {
     let wheelTimeout = null;
     scrollContainer.addEventListener('wheel', (e) => {
         e.preventDefault();
-
-        // 防抖，避免快速滚动导致连续翻页
         if (wheelTimeout) return;
 
         if (e.deltaY > 0) {
@@ -379,7 +343,7 @@ function initWebsitesPagination() {
 
         wheelTimeout = setTimeout(() => {
             wheelTimeout = null;
-        }, 500); // 500ms内只能翻一次页
+        }, 500);
     }, { passive: false });
 
     // 点击指示器切换页面

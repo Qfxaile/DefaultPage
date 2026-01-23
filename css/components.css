@@ -881,3 +881,15 @@ h1 {
     border-top: 1px solid rgba(255, 255, 255, 0.2);
     flex-shrink: 0;
 }
+
+/* ===== 通用工具类 ===== */
+.info-card-full {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none !important;
+}
+

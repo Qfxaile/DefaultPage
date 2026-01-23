@@ -1,28 +1,20 @@
 /**
- * 配置文件 - 统一管理所有硬编码的URL链接
+ * 配置文件 - 统一管理所有 URL 和资源
  */
 
 // ===== API 配置 =====
 const API = {
     // IP地址和运营商信息（多个备用，按优先级排序）
     ipInfo: [
-        'https://ipapi.co/json/',           // 主 API
-        'https://ipwhois.app/json/',        // 备用 1
-        'http://ip-api.com/json/',          // 备用 2
+        'https://ipapi.co/json/',
+        'https://ipwhois.app/json/',
+        'http://ip-api.com/json/',
     ],
 
     // 天气信息（多个备用，按优先级排序）
     weather: [
-        {
-            name: 'openmeteo',
-            url: 'https://api.open-meteo.com/v1/forecast',
-            type: 'openmeteo'
-        },
-        {
-            name: 'wttr',
-            url: 'https://wttr.in/',
-            type: 'wttr'
-        }
+        { name: 'openmeteo', url: 'https://api.open-meteo.com/v1/forecast', type: 'openmeteo' },
+        { name: 'wttr', url: 'https://wttr.in/', type: 'wttr' }
     ],
 
     // 一言（Hitokoto）
@@ -34,33 +26,15 @@ const API = {
 
 // ===== 资源 URL 配置 =====
 const RESOURCES = {
-    // 可改成远程链接
-    // PC端背景图
-    bgPC: '/img/bg-pc.png',
-
-    // 移动端背景图
-    bgAndroid: '/img/bg-android.jpg',
-
-    // 深色模式背景图（可选，留空则使用默认背景）
-    // 如需为深色模式配置不同背景，取消下方注释并填入图片路径
-    // bgDarkPC: '/img/bg-dark-pc.png',
-    // bgDarkAndroid: '/img/bg-dark-android.jpg',
+    bgPC: '/img/bg-pc.png',          // PC端背景图
+    bgAndroid: '/img/bg-android.jpg', // 移动端背景图
 };
 
 // ===== 初始化 CSS 变量 =====
-// 将资源配置设置为CSS变量，供CSS文件使用
 function initCSSVariables() {
     const root = document.documentElement;
     root.style.setProperty('--bg-pc', `url('${RESOURCES.bgPC}')`);
     root.style.setProperty('--bg-android', `url('${RESOURCES.bgAndroid}')`);
-
-    // 深色模式背景（可选）
-    if (RESOURCES.bgDarkPC) {
-        root.style.setProperty('--bg-dark-pc', `url('${RESOURCES.bgDarkPC}')`);
-    }
-    if (RESOURCES.bgDarkAndroid) {
-        root.style.setProperty('--bg-dark-android', `url('${RESOURCES.bgDarkAndroid}')`);
-    }
 }
 
 // 页面加载时立即初始化CSS变量
