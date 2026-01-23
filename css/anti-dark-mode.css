@@ -22,7 +22,7 @@ html {
 }
 
 .bg-animation::after {
-    background: rgba(0, 0, 0, 0.2) !important;
+    background: rgba(0, 0, 0, 0.35) !important;
     filter: none !important;
     -webkit-filter: none !important;
 }
