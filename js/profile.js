@@ -92,6 +92,26 @@ const HOME_CONFIG = {
             title: '音乐',
             url: 'https://music.qfxaile.top',
             icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>`
+        },
+        {
+            title: '图床',
+            url: 'https://img.qfxaile.top',
+            icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect><circle cx="8.5" cy="8.5" r="1.5"></circle><polyline points="21 15 16 10 5 21"></polyline></svg>`
+        },
+        {
+            title: '备忘录',
+            url: 'https://notes.qfxaile.top',
+            icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>`
+        },
+        {
+            title: 'API文档',
+            url: 'https://api.qfxaile.top',
+            icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>`
+        },
+        {
+            title: '网盘',
+            url: 'https://pan.qfxaile.top',
+            icon: `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19c0-3.037-2.463-5.5-5.5-5.5S6.5 15.963 6.5 19"></path><path d="M19 11c0-3.866-3.134-7-7-7s-7 3.134-7 7"></path><path d="M21 6c0-2.761-2.239-5-5-5s-5 2.239-5 5"></path></svg>`
         }
     ],
 
@@ -151,15 +171,8 @@ function initHomePage() {
         <!-- 网站导航 -->
         <div class="home-section">
             <div class="home-section-title">网站导航</div>
-            <div class="home-websites-scroll">
-                <div class="home-websites">
-                    ${HOME_CONFIG.websites.map(website => `
-                        <a href="${website.url}" class="home-website-card" target="_blank">
-                            <div class="website-card-icon">${website.icon}</div>
-                            <span class="website-card-title">${website.title}</span>
-                        </a>
-                    `).join('')}
-                </div>
+            <div class="home-websites-scroll" id="homeWebsitesScroll">
+                <!-- 由JS生成分页内容 -->
             </div>
         </div>
     `;
@@ -168,4 +181,169 @@ function initHomePage() {
     if (pageFooter) {
         pageFooter.innerHTML = HOME_CONFIG.footer.content;
     }
+
+    // 初始化网站导航分页（PC端）或横向滚动（移动端）
+    initWebsitesPagination();
+}
+
+/**
+ * 初始化网站导航分页功能
+ * PC端：分页显示，每页6个（3列2行），支持定时切换和鼠标滚轮翻页
+ * 移动端：保持原样，所有网站都显示
+ */
+function initWebsitesPagination() {
+    const scrollContainer = document.getElementById('homeWebsitesScroll');
+    if (!scrollContainer) return;
+
+    const websites = HOME_CONFIG.websites;
+    const isMobile = window.innerWidth <= 900;
+
+    // 移动端：保持原样，所有网站都显示
+    if (isMobile) {
+        scrollContainer.innerHTML = `
+            <div class="home-websites" id="homeWebsites">
+                ${websites.map(website => `
+                    <a href="${website.url}" class="home-website-card" target="_blank">
+                        <div class="website-card-icon">${website.icon}</div>
+                        <span class="website-card-title">${website.title}</span>
+                    </a>
+                `).join('')}
+            </div>
+        `;
+        return;
+    }
+
+    // PC端：分页显示
+    const itemsPerPage = 6; // 3列2行
+    const totalPages = Math.ceil(websites.length / itemsPerPage);
+
+    // 如果网站数量少于等于6个，不需要分页
+    if (websites.length <= itemsPerPage) {
+        scrollContainer.innerHTML = `
+            <div class="home-websites">
+                ${websites.map(website => `
+                    <a href="${website.url}" class="home-website-card" target="_blank">
+                        <div class="website-card-icon">${website.icon}</div>
+                        <span class="website-card-title">${website.title}</span>
+                    </a>
+                `).join('')}
+            </div>
+        `;
+        return;
+    }
+
+    // 生成分页HTML
+    const pagesHTML = websites.map((website, index) => {
+        const pageIndex = Math.floor(index / itemsPerPage);
+        const isFirstInPage = index % itemsPerPage === 0;
+        const isLastInPage = index % itemsPerPage === itemsPerPage - 1 || index === websites.length - 1;
+
+        if (isFirstInPage) {
+            return `
+                <div class="home-websites-page ${pageIndex === 0 ? 'active' : ''}" data-page="${pageIndex}">
+                    <a href="${website.url}" class="home-website-card" target="_blank">
+                        <div class="website-card-icon">${website.icon}</div>
+                        <span class="website-card-title">${website.title}</span>
+                    </a>
+            `;
+        } else if (isLastInPage) {
+            return `
+                    <a href="${website.url}" class="home-website-card" target="_blank">
+                        <div class="website-card-icon">${website.icon}</div>
+                        <span class="website-card-title">${website.title}</span>
+                    </a>
+                </div>
+            `;
+        } else {
+            return `
+                    <a href="${website.url}" class="home-website-card" target="_blank">
+                        <div class="website-card-icon">${website.icon}</div>
+                        <span class="website-card-title">${website.title}</span>
+                    </a>
+            `;
+        }
+    }).join('');
+
+    // 生成分页指示器
+    const dotsHTML = Array.from({ length: totalPages }, (_, i) => `
+        <div class="home-websites-dot ${i === 0 ? 'active' : ''}" data-page="${i}"></div>
+    `).join('');
+
+    scrollContainer.innerHTML = `
+        <div class="home-websites-pages">
+            ${pagesHTML}
+        </div>
+        <div class="home-websites-dots">
+            ${dotsHTML}
+        </div>
+    `;
+
+    // 分页状态管理
+    let currentPage = 0;
+
+    const pages = scrollContainer.querySelectorAll('.home-websites-page');
+    const dots = scrollContainer.querySelectorAll('.home-websites-dot');
+
+    // 切换到指定页面
+    function goToPage(pageIndex) {
+        if (pageIndex < 0) pageIndex = totalPages - 1;
+        if (pageIndex >= totalPages) pageIndex = 0;
+
+        // 移除当前活动页面的active类，添加prev类（用于过渡动画）
+        pages[currentPage].classList.remove('active');
+        pages[currentPage].classList.add('prev');
+        dots[currentPage].classList.remove('active');
+
+        // 激活新页面
+        pages[pageIndex].classList.remove('prev');
+        pages[pageIndex].classList.add('active');
+        dots[pageIndex].classList.add('active');
+
+        currentPage = pageIndex;
+    }
+
+    // 下一页
+    function nextPage() {
+        goToPage(currentPage + 1);
+    }
+
+    // 上一页
+    function prevPage() {
+        goToPage(currentPage - 1);
+    }
+
+    // 鼠标滚轮翻页
+    let wheelTimeout = null;
+    scrollContainer.addEventListener('wheel', (e) => {
+        e.preventDefault();
+
+        // 防抖，避免快速滚动导致连续翻页
+        if (wheelTimeout) return;
+
+        if (e.deltaY > 0) {
+            nextPage();
+        } else {
+            prevPage();
+        }
+
+        wheelTimeout = setTimeout(() => {
+            wheelTimeout = null;
+        }, 500); // 500ms内只能翻一次页
+    }, { passive: false });
+
+    // 点击指示器切换页面
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const pageIndex = parseInt(dot.dataset.page);
+            goToPage(pageIndex);
+        });
+    });
+
+    // 窗口大小改变时重新初始化
+    window.addEventListener('resize', () => {
+        const newIsMobile = window.innerWidth <= 900;
+        if (newIsMobile !== isMobile) {
+            initWebsitesPagination();
+        }
+    });
 }

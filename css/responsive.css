@@ -89,6 +89,39 @@
         letter-spacing: 4px;
         margin-top: 5px;
     }
+
+    /* 移动端网站导航保持原样，显示所有网站 */
+    .home-websites-scroll {
+        height: auto;
+        min-height: auto;
+    }
+
+    .home-websites {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .home-websites-pages {
+        position: static;
+        height: auto;
+    }
+
+    .home-websites-page {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .home-websites-dots {
+        display: none;
+    }
 }
 
 /* 中等屏幕移动端 (481px - 900px) */
@@ -148,6 +181,39 @@
         font-size: 44px;
         letter-spacing: 5px;
         margin-top: 6px;
+    }
+
+    /* 移动端网站导航保持原样，显示所有网站 */
+    .home-websites-scroll {
+        height: auto;
+        min-height: auto;
+    }
+
+    .home-websites {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        overflow-x: auto;
+        padding-bottom: 5px;
+    }
+
+    .home-websites-pages {
+        position: static;
+        height: auto;
+    }
+
+    .home-websites-page {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .home-websites-dots {
+        display: none;
     }
 }
 

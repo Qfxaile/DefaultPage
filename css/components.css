@@ -172,9 +172,19 @@
     height: 100%;
 }
 
-/* 网站导航列表 - 横向滚动容器 */
+/* 网站导航列表 - PC端分页容器 */
 .home-websites-scroll {
     max-width: 100%;
+    overflow: hidden;
+}
+
+/* PC端分页容器 */
+.home-websites-pages {
+    position: relative;
+    width: 100%;
+    /* 计算高度：卡片padding(16px*2) + icon(28px) + gap(8px) + title行高(~20px) ≈ 88px/卡片 */
+    /* 2行卡片 + 行间gap(10px) + 指示器margin(8px) + 指示器高度(14px) ≈ 208px */
+    height: 210px;
     overflow: hidden;
 }
 
@@ -182,8 +192,61 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-    overflow-x: auto;
-    padding-bottom: 5px;
+    /* PC端移除横向滚动，使用分页 */
+}
+
+.home-websites-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    transform: translateX(30px);
+}
+
+.home-websites-page.active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    z-index: 1;
+}
+
+.home-websites-page.prev {
+    transform: translateX(-30px);
+}
+
+/* 分页指示器 */
+.home-websites-dots {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 8px;
+}
+
+.home-websites-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.home-websites-dot.active {
+    background: rgba(255, 255, 255, 0.8);
+    width: 18px;
+    border-radius: 3px;
+}
+
+.home-websites-dot:hover {
+    background: rgba(255, 255, 255, 0.6);
 }
 
 /* 网站卡片 */
