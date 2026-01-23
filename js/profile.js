@@ -136,43 +136,45 @@ function initHomePage() {
 
     // 生成左栏HTML内容
     leftContainer.innerHTML = `
-        <div class="stars">
-            <span class="star" style="top: 10%; left: 15%; animation-delay: 0s;">✨</span>
-            <span class="star" style="top: 20%; right: 20%; animation-delay: 0.5s;">⭐</span>
-            <span class="star" style="bottom: 25%; left: 10%; animation-delay: 1s;">💫</span>
-        </div>
-
-        <!-- 头像 -->
-        <img class="home-avatar" src="${avatarUrl}" alt="${HOME_CONFIG.profile.name}">
-
-        <!-- 名称 -->
-        <h1 class="home-name">${HOME_CONFIG.profile.name}</h1>
-
-        <!-- 标语 -->
-        <div class="home-tagline">${HOME_CONFIG.profile.tagline}</div>
-
-        <!-- 个人简介 -->
-        <div class="home-bio">
-            <div class="bio-content">${HOME_CONFIG.profile.bio}</div>
-        </div>
-
-        <!-- 联系方式 -->
-        <div class="home-section">
-            <div class="home-section-title">联系方式</div>
-            <div class="home-contacts">
-                ${HOME_CONFIG.contacts.map(contact => `
-                    <a href="${contact.url}" class="home-contact-item" target="_blank" title="${contact.name}">
-                        <div class="home-contact-icon">${contact.icon}</div>
-                    </a>
-                `).join('')}
+        <div class="home-content-wrapper">
+            <div class="stars">
+                <span class="star" style="top: 10%; left: 15%; animation-delay: 0s;">✨</span>
+                <span class="star" style="top: 20%; right: 20%; animation-delay: 0.5s;">⭐</span>
+                <span class="star" style="bottom: 25%; left: 10%; animation-delay: 1s;">💫</span>
             </div>
-        </div>
 
-        <!-- 网站导航 -->
-        <div class="home-section">
-            <div class="home-section-title">网站导航</div>
-            <div class="home-websites-scroll" id="homeWebsitesScroll">
-                <!-- 由JS生成分页内容 -->
+            <!-- 头像 -->
+            <img class="home-avatar" src="${avatarUrl}" alt="${HOME_CONFIG.profile.name}">
+
+            <!-- 名称 -->
+            <h1 class="home-name">${HOME_CONFIG.profile.name}</h1>
+
+            <!-- 标语 -->
+            <div class="home-tagline">${HOME_CONFIG.profile.tagline}</div>
+
+            <!-- 个人简介 -->
+            <div class="home-bio">
+                <div class="bio-content">${HOME_CONFIG.profile.bio}</div>
+            </div>
+
+            <!-- 联系方式 -->
+            <div class="home-section">
+                <div class="home-section-title">联系方式</div>
+                <div class="home-contacts">
+                    ${HOME_CONFIG.contacts.map(contact => `
+                        <a href="${contact.url}" class="home-contact-item" target="_blank" title="${contact.name}">
+                            <div class="home-contact-icon">${contact.icon}</div>
+                        </a>
+                    `).join('')}
+                </div>
+            </div>
+
+            <!-- 网站导航 -->
+            <div class="home-section">
+                <div class="home-section-title">网站导航</div>
+                <div class="home-websites-scroll" id="homeWebsitesScroll">
+                    <!-- 由JS生成分页内容 -->
+                </div>
             </div>
         </div>
     `;
@@ -184,6 +186,55 @@ function initHomePage() {
 
     // 初始化网站导航分页（PC端）或横向滚动（移动端）
     initWebsitesPagination();
+
+    // 初始化左栏内容缩放
+    initLeftContentScale();
+}
+
+/**
+ * 动态缩放左栏内容以适应容器高度
+ * 当窗口缩小时，内容会按比例缩小以保持完整可见
+ * 使用 zoom 属性而不是 transform，确保布局尺寸也跟随缩放
+ */
+function initLeftContentScale() {
+    const contentWrapper = document.querySelector('.home-content-wrapper');
+    if (!contentWrapper) return;
+
+    // 获取内容的自然高度（不应用缩放时的高度）
+    function getContentNaturalHeight() {
+        // 临时移除缩放以获取自然高度
+        const currentZoom = contentWrapper.style.zoom;
+        contentWrapper.style.zoom = '1';
+        const naturalHeight = contentWrapper.scrollHeight;
+        contentWrapper.style.zoom = currentZoom;
+        return naturalHeight;
+    }
+
+    // 更新缩放
+    function updateScale() {
+        const containerHeight = contentWrapper.parentElement.clientHeight;
+        const naturalHeight = getContentNaturalHeight();
+
+        // 如果内容高度小于容器高度，不需要缩放
+        if (naturalHeight <= containerHeight) {
+            contentWrapper.style.zoom = '1';
+            return;
+        }
+
+        // 计算缩放比例（最小 0.5，防止内容过小）
+        const scale = Math.max(0.5, containerHeight / naturalHeight);
+        contentWrapper.style.zoom = scale;
+    }
+
+    // 初始缩放 - 等待内容完全渲染后再计算
+    setTimeout(updateScale, 100);
+
+    // 监听窗口大小变化
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(updateScale, 100);
+    });
 }
 
 /**
