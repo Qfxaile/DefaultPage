@@ -19,4 +19,10 @@ body {
     overflow: hidden;
     position: relative;
     align-items: stretch;
+    /* 禁止内容复制和文本选择 */
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    cursor: default;
 }
